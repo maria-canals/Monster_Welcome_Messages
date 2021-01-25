@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--VueJs script-->
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <!--Js script-->
+    <script src="/app.js" defer></script>
     <title>JavaScript Messages</title>
-</head>
-<body>
-    <div id="output"></div>
-    <label>Name:</label><input type="text" placeholder="Type your name">
-    <button>Message</button>
-</body>
-<script>
-    const btn = document.querySelector('button');
-    btn.addEventListener('click', function(){
-        const output = document.querySelector('#output');
-        const name = document.querySelector('input').value;
-        output.innerHTML = `<h1>Hello and welcome, ${name}</h1>`;
-    })
-</script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="output" v-show="showMessage">
+        Hello and welcome, {{userInput}}
+      </div>
+      <label>Name:</label
+      ><input type="text" placeholder="Type your name" @change="getUserInput" />
+      <button @click="showInput">Message</button>
+    </div>
+  </body>
 </html>
