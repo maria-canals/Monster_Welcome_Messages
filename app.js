@@ -2,15 +2,12 @@ const App = {
   data() {
     return {
       userInput: "",
-      showMessage: false,
+      messageConfirmed: "",
     };
   },
   methods: {
-    getUserInput(e) {
-      this.userInput = e.target.value;
-    },
     showInput() {
-      this.showMessage = true;
+      this.messageConfirmed = this.userInput;
     },
   },
 };

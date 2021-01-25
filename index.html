@@ -12,11 +12,11 @@
   </head>
   <body>
     <div id="container">
-      <div id="output" v-show="showMessage">
+      <div id="output" v-show="messageConfirmed">
         Hello and welcome, {{userInput}}
       </div>
       <label>Name:</label
-      ><input type="text" placeholder="Type your name" @change="getUserInput" />
+      ><input type="text" placeholder="Type your name" v-model="userInput" />
       <button @click="showInput">Message</button>
     </div>
   </body>
